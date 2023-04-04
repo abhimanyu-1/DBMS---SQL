@@ -1,3 +1,4 @@
+-----------------------------------------------------------------------------------------------------------------CREATION------------------------------------------------
 mysql> create table department(depid int primary key , name varchar(20));
 mysql> create table company(cmpid int primary key , name varchar(20) , city varchar(20) , no_emp int);
 mysql> create table employee(empid int primary key , name varchar(20) , cmpid int , desig varchar(20) , salary int, city varchar(20) , foreign key(cmpid) references company(cmpid));
@@ -49,3 +50,109 @@ mysql> desc students;
 | depid | int         | YES  | MUL | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
+--------------------------------------------------------------------------------------------------------------------------------INSERTION--------------------------------
+mysql> insert into department values(1001,'MCA');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into department values(1002,'MBA');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department values(1003,'MECH');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from department;
++-------+------+
+| depid | name |
++-------+------+
+|  1001 | MCA  |
+|  1002 | MBA  |
+|  1003 | MECH |
++-------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into company values(2001,'HR','TVM',6);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into company values(2002,'TATA','Kochi',8);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into company values(2003,'IT Solutions','Alapuzha',3);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from company;
++-------+--------------+----------+--------+
+| cmpid | name         | city     | no_emp |
++-------+--------------+----------+--------+
+|  2001 | HR           | TVM      |      6 |
+|  2002 | TATA         | Kochi    |      8 |
+|  2003 | IT Solutions | Alapuzha |      3 |
++-------+--------------+----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into employee values(3001,'Raman',2001,'clerk',10000,'aluva');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into employee values(3002,'Abhiram',2002,'ass-prof',15000,'tvm');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into employee values(3003,'shilpa',2003,'salesgirl',25000,'kochi');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from employee;
++-------+---------+-------+-----------+--------+-------+
+| empid | name    | cmpid | desig     | salary | city  |
++-------+---------+-------+-----------+--------+-------+
+|  3001 | Raman   |  2001 | clerk     |  10000 | aluva |
+|  3002 | Abhiram |  2002 | ass-prof  |  15000 | tvm   |
+|  3003 | shilpa  |  2003 | salesgirl |  25000 | kochi |
++-------+---------+-------+-----------+--------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> insert into students values(001,'Akshay','MCA','Trivandum',300,1001);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into students values(002,'Arunima','MBA','Kollam',270,1002);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into students values(003,'Krish','MCA','Trivandrum',200,1001);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into students values(004,'Nevil','MBA','Aluva',150,1002);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from students;
++-------+---------+-------+------------+-------+-------+
+| stdid | name    | class | city       | tmark | depid |
++-------+---------+-------+------------+-------+-------+
+|     1 | Akshay  | MCA   | Trivandum  |   300 |  1001 |
+|     2 | Arunima | MBA   | Kollam     |   270 |  1002 |
+|     3 | Krish   | MCA   | Trivandrum |   200 |  1001 |
+|     4 | Nevil   | MBA   | Aluva      |   150 |  1002 |
++-------+---------+-------+------------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into staff values(3002,'Deepa',1001,'Ass-Prof',32000,'Trivandrum');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into staff values(6001,'Samuel',1001,'Ass-Prof',31000,'Kollam');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into staff values(6002,'Aleena',1002,'Prof',38000,'Aluva');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into staff values(6003,'Rojin',1003,'clerk',18000,'Aluva');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from staff;
++------+--------+--------+----------+--------+------------+
+| id   | name   | deptid | desig    | salary | city       |
++------+--------+--------+----------+--------+------------+
+| 3002 | Deepa  |   1001 | Ass-Prof |  32000 | Trivandrum |
+| 6001 | Samuel |   1001 | Ass-Prof |  31000 | Kollam     |
+| 6002 | Aleena |   1002 | Prof     |  38000 | Aluva      |
+| 6003 | Rojin  |   1003 | clerk    |  18000 | Aluva      |
++------+--------+--------+----------+--------+------------+
+4 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------------------------------------OPERATIONS-----------------------------------------------
