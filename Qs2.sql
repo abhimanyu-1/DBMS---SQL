@@ -156,3 +156,48 @@ mysql> select * from staff;
 4 rows in set (0.00 sec)
 
 ----------------------------------------------------------------------------------------------------------------OPERATIONS-----------------------------------------------
+
+ a) Display all students details department wise 
+ 
+  select * from students order by depid;
+  +-------+---------+-------+------------+-------+-------+
+| stdid | name    | class | city       | tmark | depid |
++-------+---------+-------+------------+-------+-------+
+|     1 | Akshay  | MCA   | Trivandum  |   300 |  1001 |
+|     3 | Krish   | MCA   | Trivandrum |   200 |  1001 |
+|     2 | Arunima | MBA   | Kollam     |   270 |  1002 |
+|     4 | Nevil   | MBA   | Aluva      |   150 |  1002 |
++-------+---------+-------+------------+-------+-------+
+
+b) display all employees 
+
+ select * from employee;
+ +-------+---------+-------+-----------+--------+-------+
+| empid | name    | cmpid | desig     | salary | city  |
++-------+---------+-------+-----------+--------+-------+
+|  3001 | Raman   |  2001 | clerk     |  10000 | aluva |
+|  3002 | Abhiram |  2002 | ass-prof  |  15000 | tvm   |
+|  3003 | shilpa  |  2003 | salesgirl |  25000 | kochi |
++-------+---------+-------+-----------+--------+-------+
+
+c) Display all staff details whose salary>20000
+
+select * from staff where salary>20000;
++------+--------+--------+----------+--------+------------+
+| id   | name   | deptid | desig    | salary | city       |
++------+--------+--------+----------+--------+------------+
+| 3002 | Deepa  |   1001 | Ass-Prof |  32000 | Trivandrum |
+| 6001 | Samuel |   1001 | Ass-Prof |  31000 | Kollam     |
+| 6002 | Aleena |   1002 | Prof     |  38000 | Aluva      |
++------+--------+--------+----------+--------+------------+
+
+d) Display all students whose percentage  >80 and less than 90
+
+select * from students where percentage >80 and percentage <90;
++-------+---------+-------+--------+-------+-------+------------+
+| stdid | name    | class | city   | tmark | depid | percentage |
++-------+---------+-------+--------+-------+-------+------------+
+|     2 | Arunima | MBA   | Kollam |   270 |  1002 |         85 |
++-------+---------+-------+--------+-------+-------+------------+
+
+
