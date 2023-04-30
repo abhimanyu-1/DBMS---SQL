@@ -202,3 +202,54 @@ select * from students where percentage >80 and percentage <90;
 
 ----------------------------------------------------------------------------------------------------------------PART 4-----------------------------------------------
 
+a)Display students who belong to 'MCA' department.
+
+select students.name from students,department where department.depid=students.depid and department.name='mca';
++--------+
+| name   |
++--------+
+| Akshay |
+| Krish  |
++--------+
+
+b) update the salary of all staff by 10% whose designation is 'Associate professor' 
+
+ update staff set salary=(salary+(salary*.1)) where desig='Ass-prof';
+ +------+--------+--------+----------+--------+------------+
+| id   | name   | deptid | desig    | salary | city       |
++------+--------+--------+----------+--------+------------+
+| 3002 | Deepa  |   1001 | Ass-Prof |  35200 | Trivandrum |
+| 6001 | Samuel |   1001 | Ass-Prof |  34100 | Kollam     |
+| 6002 | Aleena |   1002 | Prof     |  38000 | Aluva      |
+| 6003 | Rojin  |   1003 | clerk    |  18000 | Aluva      |
++------+--------+--------+----------+--------+------------+
+
+c) Display all employees whose city is same as their company they work
+
+select employee.name from employee,company where employee.empid=company.cmpid and employee.city=company.city;
+Empty set (0.01 sec)
+
+d) display the count of staff department wise
+
+select depid,count(department.depid) from staff,department group by department.depid;
++-------+-------------------------+
+| depid | count(department.depid) |
++-------+-------------------------+
+|  1003 |                       4 |
+|  1002 |                       4 |
+|  1001 |                       4 |
++-------+-------------------------+
+
+e)delete the company details whose no of employees is <5
+ 
+ (i) delete from compamy where no_emp<5;
+ (ii)  delete from company where no_emp<5;
+ (iii) select * from employee;
+ +-------+---------+-------+----------+--------+-------+
+| empid | name    | cmpid | desig    | salary | city  |
++-------+---------+-------+----------+--------+-------+
+|  3001 | Raman   |  2001 | clerk    |  10000 | aluva |
+|  3002 | Abhiram |  2002 | ass-prof |  15000 | tvm   |
++-------+---------+-------+----------+--------+-------+
+
+ 
