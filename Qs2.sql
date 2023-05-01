@@ -254,4 +254,42 @@ e)delete the company details whose no of employees is <5
 
  ----------------------------------------------------------------------------------------------------------------PART 5-----------------------------------------------
  
- 
+a) Display all staff and student details that belong to same department
+
+ select * from students inner join staff on students.depid=staff.deptid;
++-------+---------+-------+------------+-------+-------+------------+------+--------+--------+----------+--------+------------+
+| stdid | name    | class | city       | tmark | depid | percentage | id   | name   | deptid | desig    | salary | city       |
++-------+---------+-------+------------+-------+-------+------------+------+--------+--------+----------+--------+------------+
+|     1 | Akshay  | MCA   | Trivandum  |   300 |  1001 |         80 | 6001 | Samuel |   1001 | Ass-Prof |  34100 | Kollam     |
+|     1 | Akshay  | MCA   | Trivandum  |   300 |  1001 |         80 | 3002 | Deepa  |   1001 | Ass-Prof |  35200 | Trivandrum |
+|     2 | Arunima | MBA   | Kollam     |   270 |  1002 |         85 | 6002 | Aleena |   1002 | Prof     |  38000 | Aluva      |
+|     3 | Krish   | MCA   | Trivandrum |   200 |  1001 |         90 | 6001 | Samuel |   1001 | Ass-Prof |  34100 | Kollam     |
+|     3 | Krish   | MCA   | Trivandrum |   200 |  1001 |         90 | 3002 | Deepa  |   1001 | Ass-Prof |  35200 | Trivandrum |
+|     4 | Nevil   | MBA   | Aluva      |   150 |  1002 |         95 | 6002 | Aleena |   1002 | Prof     |  38000 | Aluva      |
++-------+---------+-------+------------+-------+-------+------------+------+--------+--------+----------+--------+------------+
+
+b) Display the staff who earn maximum salary from each department 
+
+select distinct staff.name from staff,students where staff.salary>25000 and staff.city=students.city;
++--------+
+| name   |
++--------+
+| Samuel |
+| Deepa  |
+| Aleena |
++--------+
+
+c) Display staff whose salary>25000 and city same as his/her student.
+
+select name from staff where salary in(select max(salary) from staff group by deptid);
++--------+
+| name   |
++--------+
+| Deepa  |
+| Aleena |
+| Rojin  |
++--------+
+d) Display all employee details that belongs to the company having no of employees is maximum
+
+e) Update the employee salary by 8% who belongs to 'eranakulam' whose destination is 'clerk' and city same as where he works.
+
