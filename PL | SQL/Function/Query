@@ -37,6 +37,49 @@ a) Accept a studid and display his/her details
 
 select find_id(1)  from dual; 
 
+-------------------------------------------------------------------------
+
+create table deptt(did int primary key,dname varchar(10),st_name varchar(10),st_id int,st_city varchar(10),desgnt varchar(10))
+
+insert into deptt values(1,'mca','rahul',1001,'tvm','professor');
+insert into deptt values(2,'pca','shahin',1002,'tvm','professor');
+insert into deptt values(3,'mca','adityan',1003,'kottayam','clerk');
+insert into deptt values(4,'mca','sreekuttan',1004,'kollam','peon');
+
+---------------------------------------------------------------------------
+
+create or replace function details(id int)
+return number is fid number;
+cursor c3 is select * from deptt where did=id;
+did int;
+dname varchar(10);
+st_name varchar(10);
+st_id int;
+st_city varchar(10);
+desgnt varchar(10);
+begin
+open c3;
+dbms_output.put_line('did  '||'dname  '||'st_name  '||'st_id  
+
+'||'st_city  '||'desgnt');
+loop
+fetch c3 into did,dname,st_name,st_id,st_city,desgnt;
+exit when c3 %notfound;
+dbms_output.put_line(did||'  '||dname||'  '||st_name||'  '||st_id||' 
+
+ '||st_city||'   '||desgnt);
+end loop;
+return fid;
+close c3;
+end;
+/
+---------------------------------------------------------------------------
+b) Accept a deptid and display all staff details belongs to that department
+
+select details(1)  from dual;
+
+---------------------------------------------------------------------------
+
 
 
 
