@@ -1,3 +1,5 @@
+# a) AUtomatically add studid when a new student is inserted into student table
+
 ------------------------TABLE INSERTION---------------------------
 
 create table student22(id int primary key,sname varchar(20),age int,address varchar(20));
@@ -27,3 +29,10 @@ end;
 ---------------------------QUERY-----------------------------------------
 
 insert into student22 (sname, age, address) values('sheena',21,'poontura');
+
+--------------------------------------------------------------------------
+
+# b) Create a view on employee table whose designation is manager and update the salary of such employees by 10.5% without changing the salary in employee table
+
+------------------------TABLE INSERTION---------------------------
+
