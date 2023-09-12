@@ -10,44 +10,7 @@ local    112.00 KiB
 mca       88.00 KiB
 mongosh    8.00 KiB
 school    72.00 KiB
-Mongosh> use college
-switched to db college
-college> db.stdlist.find();
-[
-  {
-    _id: ObjectId("64fde5faf23205bbb65ab79a"),
-    fname: 'shibu',
-    lname: 'kumar',
-    mark: 50,
-    gender: 'male',
-    course: 'cs',
-    grade: 's',
-    dept: 'mca',
-    cont: 7902725027,
-    add: 'pattom'
-  },
-  {
-    _id: ObjectId("64fdedcff23205bbb65ab79b"),
-    fname: 'kuttan',
-    lname: 'pottan',
-    mark: 90,
-    gender: 'female',
-    course: 'physics',
-
-admin> use college
-switched to db college
-college> db.createCollection("stdlist")
-{ ok: 1 }
-college> db.stdlist.insertOne({fname:"shibu",lname:"kumar",mark:50,gender:"male",course:"cs",grade:"s",dept:"mechanical",cont:7902725027,add:"pattom"})
-{
-  acknowledged: true,
-  insertedId: ObjectId("64ffeb7f78688d10889cb578")
-college> db.stdlist.insertMany([{fname:"kuttan",lname:"b",mark:90,gender:"male",course:"physics",grade:"A+",dept:"mca",ccollege> db.stdlist.insertMany([{fname:"kuttan",lname:"b",mark:95,gender:"male",course:"physics",grade:"A+",dept:"mca",cont:7905725027,add:"vattioor"},{fname:"lechu",lname:"k",mark:10,gender:"female",course:"biology",grade:"s",dept:"mca",cont:6950312343,add:"oolanpara"},{fname:"vimal",lname:"r",mark:85},gender:"male",course:"cs",grade:"A",dept:"pca",cont:7902724590,add:"palayam"])
-Uncaught:
-SyntaxError: Unexpected token, expected "," (1:302)
-
-> 1 | db.stdlist.insertMany([{fname:"kuttan",lname:"b",mark:95,gender:"male",course:"physics",grade:"A+",dept:"mca",cont:7905725027,add:"vattioor"},{fname:"lechu",lname:"k",mark:10,gender:"female",course:"biology",grade:"s",dept:"mca",cont:6950312343,add:"oolanpara"},{fname:"vimal",lname:"r",mark:85},gender:"male",course:"cs",grade:"A",dept:"pca",cont:7902724590,add:"palayam"])
-    |                                                                                                                                                                                   
+                                                                                                                          
 college> use college
 already on db college
 college> db.createCollection("stdlist")
