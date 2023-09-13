@@ -1,0 +1,13 @@
+create table ex(id int primary key,name varchar(20));
+
+
+create or replace trigger a
+before insert on ex
+for each row
+begin
+	select nvl(max(id),0)+1 
+	into :NEW.id from ex;
+end;
+/
+
+
